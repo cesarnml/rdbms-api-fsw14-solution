@@ -14,7 +14,9 @@ module.exports = (db, resource) => ({
   create (req, res, next) {
     db(resource)
       .insert(req.body)
-      .then(count => res.status(201).json(count))
+      .then(count => {
+        res.status(201).json(count)
+      })
       .catch(next)
   },
 
