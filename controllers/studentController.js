@@ -1,5 +1,5 @@
 const db = require('../data/db')
-const crudMaker = require('../helper/crudMaker')
+const crudMaker = require('../helpers/crudMaker')
 module.exports = {
   ...crudMaker(db, 'students'),
 
