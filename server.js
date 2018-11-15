@@ -1,10 +1,9 @@
 const server = require('express')()
-const middleware = require('./middleware')
-const routes = require('./routes')
 const errorHandler = require('./helpers/errorHandler')
 
-middleware(server)
-routes(server)
+//* Middleware & Routes
+require('./middleware')(server)
+require('./routes')(server)
 
 //* Error Handler
 server.use(errorHandler)
