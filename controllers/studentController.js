@@ -1,7 +1,7 @@
 const db = require('../data/db')
-const crudMaker = require('../helpers/crudMaker')
+const crudMethodMaker = require('../helpers/crudMethodMaker')
 module.exports = {
-  ...crudMaker(db, 'students'),
+  ...crudMethodMaker(db, 'students'),
 
   findByIdAndJoinCohorts (req, res, next) {
     const { id } = req.params

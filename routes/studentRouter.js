@@ -1,21 +1,9 @@
 const router = require('express').Router()
+const crudRouteMaker = require('../helpers/crudRouteMaker')
+const { findById, ...students } = require('../controllers').students
 
-const {
-  find,
-  remove,
-  create,
-  update,
-  findByIdAndJoinCohorts
-} = require('../controllers').students
+crudRouteMaker(router, students)
 
-router.get('/', find)
-
-router.get('/:id', findByIdAndJoinCohorts)
-
-router.post('/', create)
-
-router.delete('/:id', remove)
-
-router.put('/:id', update)
+router.get('/:id', students.findByIdAndJoinCohorts)
 
 module.exports = router
