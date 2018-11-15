@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const cohorts = require('../controllers').cohorts
+const { cohorts } = require('../controllers')
 const crudRouteMaker = require('../helpers/crudRouteMaker')
 
 crudRouteMaker(router, cohorts)
